@@ -4,7 +4,7 @@ let currentMinute = 0;
 class Chronometer {
   constructor(){
     this.currentTime = 0;
-    this.intervalId = undefined;
+    this.intervalId = 0;
 
     // ... your code goes here
   }
@@ -13,14 +13,16 @@ class Chronometer {
     // ... your code goes here
     
     const intervalId = setInterval(() => {
-      currentTime += 1;
+      this.currentTime += 1;
     }, 1000);
 
     if (currentTime === 60) {
-      clearInterval(intervalId);
+      this.currentTime = 0;
+      currentMinute += 1;
     }
   }
   getMinutes() {
+    return currentMinute;
     // ... your code goes here
   }
   getSeconds() {
@@ -39,3 +41,5 @@ class Chronometer {
     // ... your code goes here
   }
 }
+
+const chrono = new Chronometer()
