@@ -112,3 +112,5 @@ btnRight.addEventListener('click', () => {
 
 });
 
+printMinutes();
+printSeconds();
